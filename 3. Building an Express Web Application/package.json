@@ -2,6 +2,6 @@
   "name": "mean",
   "version": "0.0.3",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
   }
 }

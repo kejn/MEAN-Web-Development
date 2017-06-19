@@ -6,10 +6,11 @@ module.exports = function() {
 	var app = express();
 	
 	var config = require('./config.js');
+	var requiredConfig = config.require();
 	if (config.param) {
-		app.use(config.require()(config.param));
+		app.use(requiredConfig(config.param));
 	} else {
-		app.use(config.require()());
+		app.use(requiredConfig());
 	}
 	
 	app.use(bodyParser.urlencoded({

@@ -1,10 +1,11 @@
 exports.render = function (req, res) {
-	var response = 'Hello World';
-	if (req.query.id) {
-		response = response.toUpperCase();
-		if(req.query.id == 'hellNO') {
-			response = 'Hell - no.';
-		}
+	if (req.session.lastVisit) {
+		console.log(req.session.lastVisit);
 	}
-	res.send(response);
+	
+	req.session.lastVisit = new Date();
+	
+	res.render('index', {
+		title: 'Hello World'
+	});
 };

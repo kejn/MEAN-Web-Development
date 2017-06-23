@@ -32,6 +32,7 @@ module.exports = function() {
 	
 	require('../app/routes/index.server.routes')(app);
 	require('../app/routes/users.server.routes')(app);
+	require('../app/routes/posts.server.routes')(app);
 	
 	/* Add only after routing file not to add static files folder
 	   to HTTP request paths. */
